@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from "react";
+import UsersHeader from "../components/users/UsersHeader";
+import UsersList from "../components/users/UsersList";
 
 
 function UsersView() {
@@ -15,18 +17,8 @@ function UsersView() {
 
   return <>
     <table>
-      <tr>
-        <th>Username</th>
-        <th>Email</th>
-      </tr>
-      {users.map(user => (
-        <tr>
-          <td>{user.name}</td>
-          <td>
-            <a href={`mailto:${user.email}`}>{user.email}</a>
-          </td>
-        </tr>
-      ))}
+      <UsersHeader/>
+      <UsersList users={users}/>
     </table>
     </>;
 }
