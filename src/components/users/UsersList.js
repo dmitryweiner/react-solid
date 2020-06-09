@@ -4,7 +4,7 @@ import User from "./User";
 export default function UsersList({users}) {
   return <>
     {users.map(user => (
-      <User user={user}/>
+      <User name={user.name} email={user.email}/>
     ))}
     </>;
 }

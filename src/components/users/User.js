@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function User({user}) {
+export default function User({name, email}) {
   return <>
     <tr>
-      <td>{user.name}</td>
+      <td>{name}</td>
       <td>
-        <a href={`mailto:${user.email}`}>{user.email}</a>
+        <a href={`mailto:${email}`}>{email}</a>
       </td>
     </tr>
   </>;
