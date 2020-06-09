@@ -3,14 +3,13 @@ import UsersHeader from "../components/users/UsersHeader";
 import UsersList from "../components/users/UsersList";
 
 
-function UsersView() {
+function UsersView({fetchUsers}) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      const result = await res.json();
-      setUsers(result);
+      const users = await fetchUsers();
+      setUsers(users);
     }
     fetchData();
   }, []);
